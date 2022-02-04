@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.hns-container {
+  .hns-search-containrer {
+    button.hsn-modal-button {
+      margin: 5px 5px 5px 0;
+      padding: 5px;
+    }
+  }
+  table {
+    padding: 10px 20px;
+    td:last-child {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+    td:last-child.active,
+    td:last-child:hover {
+      background-color: $primary;
+      svg {
+        stroke: #fff;
+        fill: #fff;
+      }
+    }
+  }
+}

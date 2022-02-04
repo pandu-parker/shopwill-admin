@@ -1,0 +1,122 @@
+@import '../../styles/variables';
+
+.form-container {
+  margin: 20vh auto;
+  display: flex;
+  justify-content: space-between;
+  width: 825px;
+  border: 1px solid $lightGrey;
+  border-radius: 40px;
+}
+
+
+
+.form-desc {
+  height: 500px;
+  position: relative;
+  flex-basis: 425px;
+  .wave-svg {
+    position: absolute;
+    // left: 0;
+    // right: 0;
+  }
+  .desc-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px 30px;
+    max-width: 400px;
+  }
+  .logo-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .goods-svg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+form.login-form {
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  flex-basis: 400px;
+  .user-type {
+    display: flex;
+    justify-content: space-between;
+    span {
+      border: 1px solid $lightGrey;
+      padding: 5px;
+      flex-basis: 50%;
+      // background-color: $lightGrey;
+      cursor: pointer;
+      text-align: center;
+      &.active {
+        background-color: $primary;
+        color: $white;
+        border-bottom: none;
+      }
+    }
+  }
+  .form-control {
+    width: 100%;
+    margin: 10px auto;
+    max-width: 450px;
+    display: flex;
+    flex-flow: column;
+    label {
+      display: flex;
+      color: $darkGrey;
+      font-size: 1rem;
+    }
+    input {
+      flex-basis: 70%;
+      padding: 15px 5px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 2px solid #eee;
+      color: $darkGrey;
+      font-size: 1rem;
+      &::placeholder {
+        color: $lightGrey;
+        font-size: 0.9rem;
+      }
+      &:focus {
+        border: 2px solid $primaryLight;
+        outline: none;
+      }
+    }
+  }
+}
+
+.muted-text {
+  flex-basis: 70%;
+  display: inline-block;
+  font-size: 0.9rem;
+  color: $mutedGrey;
+  a {
+    color: $primary;
+  }
+}
+.submit-btn {
+  padding: 9px 0;
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  flex-basis: 70%;
+  background-color: #000;
+  cursor: pointer;
+  color: $white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  &:hover {
+    border: 2px solid #000;
+    background-color: $white;
+    color: #000;
+  }
+}

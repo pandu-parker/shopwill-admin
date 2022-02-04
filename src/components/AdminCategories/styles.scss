@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+.category-container {
+  display: flex;
+  ul {
+    margin-right: 5px;
+    padding: 0;
+    list-style-type: none;
+  }
+  .category {
+    flex-basis: 33%;
+    h3 {
+      padding: 0 20px 5px 0;
+      display: inline-block;
+      border-bottom: 2px solid $primary;
+      color: #777;
+      font-weight: 400;
+    }
+    li {
+      margin: 5px 0;
+      padding: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      text-transform: capitalize;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li.active {
+      background-color: $primary;
+      color: $white;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+// li
+.category-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-button {
+  border: none;
+  color: red;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.4rem;
+}
+
+.add-category {
+  margin-right: 5px;
+  display: flex;
+  input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    flex-grow: 1;
+  }
+  button {
+    border: none;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: $green;
+    color: $white;
+  }
+}

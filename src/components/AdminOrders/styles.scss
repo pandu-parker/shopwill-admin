@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.order-list {
+    padding: 0;
+    list-style-type: none;
+    li {
+        margin: 20px 0;
+        padding: 10px ;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+    }
+    .order {
+        p {
+            color: $mutedGrey;
+            span {
+                color: black;
+                &.green-text {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

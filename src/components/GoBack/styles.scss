@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+.go-back {
+    margin: 20px 0;
+    
+    a {
+        border: 2px solid $primary;
+        padding: 10px 40px;    
+        color: $white;
+        background-color: $primary;
+        svg {
+            position: relative;
+            top: 2px;
+            fill : $white;
+        }
+        &:hover {
+            color: $primary;
+            background-color: $white;
+            svg {
+                fill : $primary;
+            }
+        }
+    }
+}

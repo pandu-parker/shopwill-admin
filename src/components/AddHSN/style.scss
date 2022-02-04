@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+form.hns-form {
+    display: flex;
+    input, textarea {
+        border: 1px solid $lightGrey;
+    }
+    button {
+        border: none;
+        background-color: $primary;
+        color: $white;
+    }
+    textarea{
+        flex-grow: 1;
+    }
+}

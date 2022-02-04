@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-spacing: 0;
+}
+th {
+  padding: 10px;
+  border: 1px solid rgb(216, 216, 216);
+}
+td {
+  padding: 10px;
+  border: 1px solid rgb(207, 207, 207);
+}
+.add {
+  background-color: $green;
+  color: $white;
+  border: 2px solid $green;
+  &:hover {
+    background-color: $white;
+    color: $green;
+  }
+}

@@ -1,0 +1,20 @@
+@import './variables';
+
+.main-screens {
+    list-style-type: none;
+    padding: 0;
+    li {
+        margin: 10px 0;
+        a {
+            border: 2px solid $primary;
+            padding: 20px;
+            display: block;
+            color: $primary;
+            text-transform: uppercase;
+            &:hover {
+                color: $white;
+                background-color: $primary;
+            }
+        }
+    }
+}

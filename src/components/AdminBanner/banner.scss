@@ -1,0 +1,22 @@
+.banner-container {
+  margin: 10px 0;
+}
+
+.banner-image-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  p {
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: column;
+    button {
+      align-self: flex-start;
+    }
+  }
+  img {
+    flex-basis: 50%;
+    width: 100%;
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.loader {
+  overflow: hidden;
+  width: 100%;
+  height: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  z-index: 100000;
+}
+
+.loader__element {
+  height: 3px;
+  width: 100%;
+  background: $white;
+}
+
+.loader__element:before {
+  content: '';
+  display: block;
+  background-color: $primary;
+  height: 3px;
+  width: 10%;
+  margin-left: 0;
+  animation: getWidth 3s ease-in infinite;
+}
+
+@keyframes getWidth {
+  100% {
+    width: 100%;
+    margin-left: 100%;
+  }
+}
