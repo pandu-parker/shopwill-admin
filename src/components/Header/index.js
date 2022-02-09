@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , withRouter} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router';
+// import {  } from 'react-router';
 
 import Loader from '../Loader';
 import { AiFillCaretDown, AiOutlineShoppingCart } from 'react-icons/ai';
