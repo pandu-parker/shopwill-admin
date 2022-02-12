@@ -15,7 +15,7 @@ import axios from 'axios';
 export const getCategories = () => async (dispatch) => {
   try {
     dispatch({ type: GET_CATEGORIES_REQUEST });
-    const { data } = await axios.get('/api/categories/category');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/categories/category`);
     dispatch({
       type: GET_CATEGORIES_SUCCESS,
       payload: data,
@@ -40,7 +40,7 @@ export const AddCategory = (name, type, parentCategory) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      `/api/categories/${type}`,
+      `${process.env.REACT_APP_BASE_URL}/api/categories/${type}`,
       {
         name,
         parentCategory,
@@ -68,7 +68,7 @@ export const deleteCategory = (id, type) => async (dispatch) => {
       },
     };
     const { data } = await axios.delete(
-      `/api/categories/${type}/${id}`,
+      `${process.env.REACT_APP_BASE_URL}/api/categories/${type}/${id}`,
       config
     );
     dispatch({ type: DELETE_CATEGORIES_SUCCESS, payload: { ...data } });

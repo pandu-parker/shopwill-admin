@@ -21,9 +21,9 @@ import {
   export const getProducts = query => async dispatch => {
     try {
       dispatch({ type: GET_PRODUCTS_REQUEST });
-      let url = `/api/products`;
+      let url = `${process.env.REACT_APP_BASE_URL}/api/products`;
       if (query) {
-        url = `/api/products${query}`;
+        url = `${process.env.REACT_APP_BASE_URL}/api/products${query}`;
       }
       const { data } = await axios.get(url);
       dispatch({
@@ -44,7 +44,7 @@ import {
   export const getProductDetail = id => async dispatch => {
     try {
       dispatch({ type: PRODUCT_DETAIL_REQUEST });
-      const { data } = await axios.get(`/api/products/${id}`);
+      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/products/${id}`);
       dispatch({
         type: PRODUCT_DETAIL_SUCCESS,
         payload: data,
@@ -73,7 +73,7 @@ import {
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.post('/api/products/', {}, config);
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/products/`, {}, config);
       dispatch({ type: ADD_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -98,7 +98,7 @@ import {
         },
       };
       const { data } = await axios.put(
-        `/api/products/${product.id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/products/${product.id}`,
         product,
         config
       );
@@ -125,7 +125,7 @@ import {
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.delete(`/api/products/${id}`, config);
+      const { data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/products/${id}`, config);
       dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

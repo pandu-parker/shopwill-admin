@@ -9,7 +9,7 @@ const ImageGallery = ({images , setImages}) => {
   const [selectedImages, setSelectedImages] = useState(images);
   useEffect(() => {
     const getImages = async () => {
-      const result = await axios.get('/api/images/');
+      const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/images/`);
       setAllImages(result.data);
     };
     getImages();
@@ -52,6 +52,7 @@ const ImageGallery = ({images , setImages}) => {
       console.error(error);
     }
   };
+  console.log(allImages)
   return (
     <div>
       Image gallery
@@ -61,7 +62,7 @@ const ImageGallery = ({images , setImages}) => {
             <img
               className={isActive(image._id) ? 'active' : ''}
               onClick={e => handleImageClick(image)}
-              src={image.path}
+              src={`${process.env.REACT_APP_BASE_URL}${image.path}`}
               alt='data'
             />
           );

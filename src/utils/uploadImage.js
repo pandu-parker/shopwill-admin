@@ -10,7 +10,7 @@ const uploadFile = async e => {
           'Content-type': 'multipart/form-data',
         },
       };
-      const { data } = await axios.post('/api/upload', formData, config);   
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/upload`, formData, config);   
       return data;   
     } catch (error) {
       return error

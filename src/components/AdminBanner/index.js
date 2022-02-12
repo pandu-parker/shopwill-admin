@@ -33,7 +33,7 @@ const AdminBanner = () => {
                 <span>Url: {banner.image}</span>
                 <button onClick={e =>setEdit(banner)}>Edit</button>
               </p>
-              <img src={banner.image} alt='' />
+              <img src={`${process.env.REACT_APP_BASE_URL}${banner.image}`} alt='' />
             </div>
           );
         })}

@@ -103,12 +103,13 @@ form.login-form {
     color: $primary;
   }
 }
+
 .submit-btn {
+  width: 100%;
   padding: 9px 0;
   display: inline-block;
   border: 2px solid transparent;
   border-radius: 3px;
-  flex-basis: 70%;
   background-color: #000;
   cursor: pointer;
   color: $white;

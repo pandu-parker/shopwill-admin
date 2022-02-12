@@ -18,8 +18,7 @@ import {
           'Content-type': 'application/json',
         },
       };
-      console.log('here', user);
-      const { data } = await axios.post('/api/users', user, config);
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/users`, user, config);
       dispatch({
         type: USER_SIGNUP_SUCCESS,
         payload: data,
@@ -46,7 +45,7 @@ import {
         };
         console.log(userType)
         const { data } = await axios.post(
-          `/api/${userType}/login`,
+          `${process.env.REACT_APP_BASE_URL}/api/${userType}/login`,
           { email, password },
           config
         );

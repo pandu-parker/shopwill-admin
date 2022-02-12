@@ -27,7 +27,7 @@ export const getDeals = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get('/api/deals/all', config);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/deals/all`, config);
     dispatch({
       type: GET_DEALS_SUCCESS,
       payload: data,
@@ -58,7 +58,7 @@ export const addDeal =
         },
       };
       const { data } = await axios.post(
-        '/api/deals/',
+        `${process.env.REACT_APP_BASE_URL}/api/deals/`,
         { product, show },
         config
       );
@@ -90,7 +90,7 @@ export const removeDeal = id => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.delete(`/api/deals/${id}`, config);
+    const { data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/deals/${id}`, config);
     dispatch({
       type: REMOVE_DEAL_SUCCESS,
       payload: data,
@@ -119,7 +119,7 @@ export const editDeal = (id, show) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.put(`/api/deals/${id}`, { ...show }, config);
+    const { data } = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/deals/${id}`, { ...show }, config);
     dispatch({
       type: EDIT_DEAL_SUCCESS,
       payload: data,

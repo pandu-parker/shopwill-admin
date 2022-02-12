@@ -218,7 +218,7 @@ const EditProductScreen = ({ match, history }) => {
     if (!sku) return;
     const checkSkuActive = async () => {
       try {
-        await axios.get(`/api/products/checksku?sku=${sku}`);
+        await axios.get(`${process.env.REACT_APP_BASE_URL}/api/products/checksku?sku=${sku}`);
         setSkuResult(true);
       } catch (error) {
         if (product.sku === sku) {
@@ -248,7 +248,7 @@ const EditProductScreen = ({ match, history }) => {
           <div className='form-control'>
             <label htmlFor=''>Product Image: </label>
             {images.map(image => {
-              return <div><img src={image.path} alt='' /><button onClick={e => removeImage(e,image)}>delete</button></div>;
+              return <div><img src={`${process.env.REACT_APP_BASE_URL}${image.path}`} alt='' /><button onClick={e => removeImage(e,image)}>delete</button></div>;
             })}
           </div>
           <div className='form-control'>

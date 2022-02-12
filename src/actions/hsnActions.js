@@ -18,7 +18,7 @@ import axios from 'axios';
 export const getAllHSN = () => async dispatch => {
   try {
     dispatch({ type: GET_HSN_REQUEST });
-    const { data } = await axios.get('/api/hsn');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/hsn`);
     dispatch({
       type: GET_HSN_SUCCESS,
       payload: data,
@@ -37,7 +37,7 @@ export const getAllHSN = () => async dispatch => {
 export const searchHsn = query => async dispatch => {
   try {
     dispatch({ type: GET_HSN_REQUEST });
-    const { data } = await axios.get(`/api/hsn/search?query=${query}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/hsn/search?query=${query}`);
     dispatch({
       type: GET_HSN_SUCCESS,
       payload: data,
@@ -69,7 +69,7 @@ export const addHSN =
       };
 
       const { data } = await axios.post(
-        `/api/hsn`,
+        `${process.env.REACT_APP_BASE_URL}/api/hsn`,
         {
           category,
           subCategory,
@@ -109,7 +109,7 @@ export const editHSN =
       };
 
       const { data } = await axios.put(
-        `/api/hsn/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/hsn/${id}`,
         {
           category,
           subCategory,
@@ -146,7 +146,7 @@ export const deleteHSN = id => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.delete(`/api/hsn/${id}`, config);
+    const { data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/hsn/${id}`, config);
     dispatch({ type: DELETE_HSN_SUCCESS, payload: { ...data } });
     dispatch(getAllHSN());
   } catch (error) {

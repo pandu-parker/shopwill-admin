@@ -83,9 +83,9 @@ const LoginForm = ({ history }) => {
             Don't have an account? <Link to='signup'>SignUp</Link>
           </span>
         </div>
-        <div className='form-control'>
+        {/* <div className='form-control'> */}
           <button className='btn-block submit-btn'>Login</button>
-        </div>
+        {/* </div> */}
       </form>
     </div>
   );

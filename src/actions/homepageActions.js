@@ -12,7 +12,7 @@ import {
   export const getBanners = () => async (dispatch) => {
     try {
       dispatch({ type: GET_BANNERS_REQUEST });
-      const { data } = await axios.get('/api/homepage/banner');
+      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/homepage/banner`);
       dispatch({
         type: GET_BANNERS_SUCCESS,
         payload: data,
@@ -36,7 +36,7 @@ import {
           'Content-type' : 'application/json'
         }
       }
-      const {data} = await axios.put('/api/homepage/banner', banner , config);
+      const {data} = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/homepage/banner`, banner , config);
       dispatch({
         type: EDIT_BANNERS_SUCCESS,
         payload: data,

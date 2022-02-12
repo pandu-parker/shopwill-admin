@@ -21,7 +21,7 @@ export const getOrders = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get('/api/orders/all', config);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/orders/all`, config);
     dispatch({
       type: GET_ORDERS_SUCCESS,
       payload: data,
@@ -51,7 +51,7 @@ export const editOrder =
         },
       };
       const { data } = await axios.post(
-        '/api/orders/status',
+        `${process.env.REACT_APP_BASE_URL}/api/orders/status`,
         { ...orderId, ...orderStatus },
         config
       );
