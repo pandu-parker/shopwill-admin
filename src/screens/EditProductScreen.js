@@ -213,6 +213,7 @@ const EditProductScreen = ({ match, history }) => {
     e.preventDefault();
     setHsnModal(true);
   };
+  
   // check SKU
   useEffect(() => {
     if (!sku) return;
